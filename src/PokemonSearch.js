@@ -17,7 +17,8 @@ export default function PokemonSearch() {
   
         // put the jsonified data in state and set the loading state to false
   }
-      
+  
+  console.log(nameForm);
   return (
     <section className='pokemon'>
       {/* make the fetch on submit */}
@@ -27,7 +28,7 @@ export default function PokemonSearch() {
         <input 
           placeholder='Name' 
           value={nameForm}
-          onChange={setNameForm}
+          onChange={e => setNameForm(e.target.value)}
         />
         <button>Get pokemon</button>
       </form>
