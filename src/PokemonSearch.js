@@ -4,7 +4,7 @@ import Spinner from './Spinner';
 
 export default function PokemonSearch() {
       // you'll need to track your pokemon search results, the loading state, and one form field: name. For this form field, set a real initial values (like 'pikachu') so the form populates with a default value.
-  const [pokeSearch, setPokeSearch] = useState('');
+  const [pokemon, setPokemon] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [nameForm, setNameForm] = useState('Charizard');
   
@@ -14,11 +14,17 @@ export default function PokemonSearch() {
         // set the loading state to true
     setIsLoading(true);
         // use fetch to make a request to your netlify pokemon function. Be sure to pass the pokemon name as a query param in the URL
-  
-        // put the jsonified data in state and set the loading state to false
+    const response = await fetch(`/.netlify/functions/pokemon?pokemon=${nameForm}`);
+
+    // put the jsonified data in state and set the loading state to false
+    const json = await response.json();
+    console.log(json);
+
+    setPokemon(json);
+    setIsLoading(false);
   }
   
-  console.log(nameForm);
+
   return (
     <section className='pokemon'>
       {/* make the fetch on submit */}
