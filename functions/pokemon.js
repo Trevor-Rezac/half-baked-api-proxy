@@ -1,4 +1,4 @@
-const request = require('superagent');
+const request = require('node-fetch');
 
 require('dotenv').config();
 
@@ -10,6 +10,7 @@ exports.handler = async (event, context) => {
     
     // consult the pokedex docs 
     // https://pokedex-alchemy.herokuapp.com/
+
 
     return { 
       statusCode: 200, 
