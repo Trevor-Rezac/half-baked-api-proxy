@@ -82,3 +82,8 @@ label {
   width: 100px;
   height: 100px;
 }
+
+.spinner img {
+  height: 150px;
+  width: 150px;
+}
