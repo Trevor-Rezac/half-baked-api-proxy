@@ -23,7 +23,7 @@ export default function YelpSearch() {
 
     setIsLoading(false);
   }
-  console.log('||', businesses);
+  
   return (
     <section className='yelp'>
       {/* make the fetch on submit */}
